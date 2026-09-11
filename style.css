@@ -24,6 +24,9 @@ body {
 header {
     background-color: #111827;
     padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
@@ -47,6 +50,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -73,9 +77,14 @@ section h2 {
 #home {
     min-height: 80vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
 }
 
 #home p:first-child {
@@ -103,10 +112,26 @@ section h2 {
     padding: 12px 25px;
     border-radius: 6px;
     text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #home a:hover {
     background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #2563eb;
 }
 
 
@@ -136,6 +161,12 @@ section h2 {
     padding: 12px 20px;
     border-radius: 6px;
     border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#skills li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -147,6 +178,12 @@ article {
     margin-bottom: 20px;
     border-radius: 8px;
     border-left: 4px solid #2563eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 article h3 {
@@ -204,10 +241,16 @@ footer {
     #home {
         flex-direction: column;
         text-align: center;
+        padding-top: 60px;
     }
 
     #home h2 {
         font-size: 38px;
+    }
+
+    #home p {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-image img {
@@ -218,30 +261,4 @@ footer {
     section {
         padding: 60px 6%;
     }
-}
-/* Hero Layout */
-
-#home {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-}
-
-.hero-text {
-    flex: 1;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-image img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #2563eb;
 }
